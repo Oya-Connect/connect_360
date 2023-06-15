@@ -10,7 +10,7 @@ const AppLayout = ({children}) => {
         </header>
 
         <footer className='app__footer'>
-            
+
         </footer>
     </div>
   )
