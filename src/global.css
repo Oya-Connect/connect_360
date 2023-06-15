@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sr-only {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    clip-path: circle(0%);
+}
+
+
+@media (max-width: 767px) {
+    .navbar__primary-navigation {
+        background-color: red;
+        position: absolute;
+        inset: 0 50% 0 0;
+        transform: translateX(-100%);
+    }
+    .navbar__links[data-show-menu='true'] {
+        background-color: red;
+    }
+}
