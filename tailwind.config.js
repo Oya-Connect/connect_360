@@ -15,6 +15,10 @@ module.exports = {
       screens: {
         'mobile': {'max': '767px'}
       },
+
+      gap: {
+        'p-20': '20%',
+      }
     },
   },
   plugins: [],
