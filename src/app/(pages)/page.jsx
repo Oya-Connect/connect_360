@@ -5,6 +5,8 @@ const Home = () => {
   return (
     <>
     <header className="header--home w-full h-96 relative">
+
+      {/* Example of how to use the carousel */}
       <Carousel>
         <div className="carousel__slide bg-slate-900 z-10">
           dummy slide

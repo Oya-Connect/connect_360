@@ -6,8 +6,11 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 const Carousel = ({ className = "default-carousel", children }) => {
   const [slides, setSlides] = useState([]);
   const currSlide = useRef(0);
+
+  // Dummy array to get the number of indicators based the number of children sldes
   const indicators = Array(slides.length);
   indicators.fill("indicator");
+
   useEffect(() => {
     const _slides = document.querySelectorAll(".carousel__slide");
     _slides.forEach((slide, index) => {
@@ -19,6 +22,7 @@ const Carousel = ({ className = "default-carousel", children }) => {
   function slide(e) {
     const type = e.target.id;
 
+    // Set the currentSlide based on the type of button clicked (indicator or slide buttons)
     switch (type) {
       case "next":
         if (currSlide.current === (slides.length - 1) * -1) {
@@ -76,6 +80,8 @@ const Carousel = ({ className = "default-carousel", children }) => {
           <AiOutlineArrowRight />
         </button>
       </div>
+
+      {/* Spit out indicators based on the number of children slides */}
       <div className="carousel__indicators flex gap-4 absolute bottom-3 left-1/2 -translate-x-1/2 z-20">
         {indicators.map((target, index) => (
           <div
