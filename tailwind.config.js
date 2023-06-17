@@ -26,6 +26,9 @@ module.exports = {
 
       translate: {
         'm50': '-50%'
+      },
+      width: {
+        '100': '30rem'
       }
     },
   },

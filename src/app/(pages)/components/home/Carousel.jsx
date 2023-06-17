@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Carousel = ({ className = "default-carousel", children }) => {
   const [slides, setSlides] = useState([]);
   const currSlide = useRef(0);
   const indicators = Array(slides.length);
   indicators.fill("indicator");
-
   useEffect(() => {
     const _slides = document.querySelectorAll(".carousel__slide");
     _slides.forEach((slide, index) => {
@@ -38,7 +38,11 @@ const Carousel = ({ className = "default-carousel", children }) => {
         console.log(currSlide.current);
         break;
       default:
+        document.querySelectorAll(".indicator").forEach((ind) => {
+          ind.classList.remove("active");
+        });
         currSlide.current = Number(type);
+        e.target.classList.add("active");
         break;
     }
 
@@ -50,37 +54,40 @@ const Carousel = ({ className = "default-carousel", children }) => {
   }
 
   return (
-    <div className="carousel-wrapper absolute aspect-slide">
+    <div className="carousel-wrapper w-full h-full md:w-100 md:h-auto absolute aspect-slide bottom-0 left-1/2 -translate-x-1/2">
       <div
         className={`${className} carousel relative w-full h-full overflow-hidden`}
       >
         {children}
-        <button
-          id="next"
-          onClick={slide}
-          className="w-24 absolute bg-slate-700"
-        >
-          next
-        </button>
 
         <button
           onClick={slide}
           id="prev"
-          className="w-24 bg-slate-700 absolute right-0"
+          className="w-14 bg-slate-700 absolute left-0 top-1/2 -translate-y-1/2 z-20"
         >
-          prev
+          <AiOutlineArrowLeft />
+        </button>
+
+        <button
+          id="next"
+          onClick={slide}
+          className=" w-14 absolute bg-slate-700 right-0 top-1/2 -translate-y-1/2 z-20"
+        >
+          <AiOutlineArrowRight />
         </button>
       </div>
-      <div className="carousel__indicators flex gap-4 absolute bottom-3 left-1/2 -translate-x-1/2">
+      <div className="carousel__indicators flex gap-4 absolute bottom-3 left-1/2 -translate-x-1/2 z-20">
         {indicators.map((target, index) => (
-          <span
+          <div
             onClick={slide}
             key={target}
             id={index * -1}
-            className="carousel__indicator w-3 rounded-full aspect-square cursor-pointer bg-black"
+            className={`carousel__indicator w-3 rounded-full aspect-square cursor-pointer bg-black ${
+              index === 0 ? "active" : ""
+            }`}
           >
             <span className="sr-only">indicator-to-{target}</span>
-          </span>
+          </div>
         ))}
       </div>
     </div>
