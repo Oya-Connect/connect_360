@@ -19,3 +19,20 @@
 .navbar__menu--mobile[data-show-menu="false"] {
   transform: translateX(-105%);
 }
+
+.header--home {
+  background-image: url('../public/images/house-image-1.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel__slide {
+  inset: 0 0 0 0;
+  position: absolute;
+  transition: transform 500ms ease;
+}
+
+.carousel-wrapper {
+  inset: 25% 25% 0 25%;
+}
