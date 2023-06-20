@@ -3,25 +3,20 @@
 import React, { useEffect, useState, useRef } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
-const Carousel = ({ className = "default-carousel", children }) => {
-  const [slides, setSlides] = useState([]);
+const Carousel = ({ className = "default-carousel", children, slides }) => {
+  const [indicators, setIndicators] = useState([]);
   const currSlide = useRef(0);
-
-  // Dummy array to get the number of indicators based the number of children sldes
-  const indicators = Array(slides.length);
-  indicators.fill("indicator");
+  console.log(slides);
 
   useEffect(() => {
-    const _slides = document.querySelectorAll(".carousel__slide");
-    _slides.forEach((slide, index) => {
+    slides.forEach((slide, index) => {
       slide.style.transform = `translateX(${index * 100}%)`;
     });
-    setSlides(_slides);
-  }, []);
+    setIndicators(Array(slides.length).fill("indicators"));
+  }, [slides]);
 
   function slide(e) {
     const type = e.target.id;
-
     // Set the currentSlide based on the type of button clicked (indicator or slide buttons)
     switch (type) {
       case "next":
