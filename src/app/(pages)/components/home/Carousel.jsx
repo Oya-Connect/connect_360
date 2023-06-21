@@ -25,7 +25,6 @@ const Carousel = ({ className = "default-carousel", children, slides }) => {
         } else {
           currSlide.current--;
         }
-        console.log(currSlide.current);
         break;
 
       case "prev":
