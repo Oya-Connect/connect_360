@@ -6,7 +6,9 @@ const Home = () => {
   const slides = useRef([]);
   
   // Function to add the slide Nodes to a ref
-  const addSlide = (el) => slides.current.push(el)
+  const addSlide = (el) => {
+    slides.current.includes(el) || slides.current.push(el)
+  }
 
   return (
     <>
