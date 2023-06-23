@@ -18,6 +18,17 @@ module.exports = {
 
       gap: {
         'p-20': '20%',
+      },
+
+      aspectRatio: {
+        'slide': '2 / 1'
+      },
+
+      translate: {
+        'm50': '-50%'
+      },
+      width: {
+        '100': '30rem'
       }
     },
   },

@@ -1,3 +1,7 @@
+:root{
+
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -226,4 +230,16 @@
   margin-right: 0.15rem;
   text-decoration: none;
   color: #fff;
+}
+.header--home {
+  background-image: url('../public/images/house-image-1.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel__slide {
+  inset: 0 0 0 0;
+  position: absolute;
+  transition: transform 500ms ease;
 }

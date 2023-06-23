@@ -1,4 +1,4 @@
-import NavBar from "@/global/components/NavBar";
+import NavBar from "@/app/(pages)/components/global/NavBar";
 
 const AppLayout = ({ children }) => {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Logo from "../../../public/images/logo.png";
+import Logo from "../../../../../public/images/logo.png";
 import Image from "next/image";
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
@@ -51,7 +51,7 @@ const NavBar = () => {
   return (
     <nav className="navbar flex gap-0 md:gap-p-20 px-8 items-center">
       <div
-        className="navbar__menu-btn block md:hidden  cursor-pointer z-10"
+        className="navbar__menu-btn block md:hidden  cursor-pointer z-20"
         onClick={toggleNavMenu}
       >
         {menubarOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
@@ -59,7 +59,7 @@ const NavBar = () => {
       <div className="navbar__logo-container w-36 mx-auto md:m-auto">
         <Image
           src={Logo}
-          className="navbar__logo w-full -z-20"
+          className="navbar__logo w-full"
           alt="organization logo"
         />
       </div>
@@ -82,7 +82,7 @@ const NavBar = () => {
       <div
         data-show-menu="false"
         ref={navMenu}
-        className="navbar__menu--mobile flex flex-col h-auto md:hidden py-20 z-0 px-8 gap-10"
+        className="navbar__menu--mobile flex flex-col h-auto md:hidden py-20 z-10 px-8 gap-10"
       >
         <ul className="navbar__links  flex flex-col gap-7">
           <li className="capitalize">Home</li>
