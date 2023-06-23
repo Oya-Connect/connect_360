@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </Carousel>
     </header>
-    
+    {/* All the discrete styling for the home page will go here */}
     <main className="main--home">
       
     </main>
