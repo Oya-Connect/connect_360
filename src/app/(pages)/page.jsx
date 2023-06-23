@@ -4,11 +4,11 @@ import Carousel from "./components/home/Carousel";
 
 const Home = () => {
   const slides = useRef([]);
- 
+  
+  // Function to add the slide Nodes to a ref
   const addSlide = (el) => {
     slides.current.includes(el) || slides.current.push(el)
   }
-
 
   return (
     <>
@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </Carousel>
     </header>
-    
+    {/* All the discrete styling for the home page will go here */}
     <main className="main--home">
       
     </main>
