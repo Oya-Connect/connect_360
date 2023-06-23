@@ -1,0 +1,39 @@
+:root{
+
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sr-only {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  clip-path: circle(0%);
+}
+
+.navbar__menu--mobile {
+  background-color: bisque;
+  position: absolute;
+  inset: 0 50% 0 0;
+  transition: transform 500ms ease;
+}
+
+.navbar__menu--mobile[data-show-menu="false"] {
+  transform: translateX(-105%);
+}
+
+.header--home {
+  background-image: url('../../public/images/house-image-1.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel__slide {
+  inset: 0 0 0 0;
+  position: absolute;
+  transition: transform 500ms ease;
+}
